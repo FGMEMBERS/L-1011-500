@@ -3,32 +3,6 @@
 
    <path>L-1011-500.ac</path>
 
-<nasal> 
- <load> var livery_update = aircraft.livery_update.new("Aircraft/L-1011-500/Models/Liveries"); </load> 
- <unload> livery_update.stop(); </unload>
- </nasal> 
-
-<animation>
- <type>material</type>
- <object-name>Loutbslat_l1011</object-name>
- <object-name>fuselage_l1011</object-name>
- <object-name>Fgearbox_l1011</object-name>
- <object-name>Fgear_l1011</object-name>
- <object-name>FlandgLbdo_l1011</object-name>
- <object-name>FlandgLsdo_l1011</object-name>
- <object-name>FlandgRsdo_l1011</object-name>
- <object-name>eng2rev_l1011</object-name>
- <object-name>door.001</object-name>
- <object-name>door.002</object-name>
- <object-name>door.003</object-name>
- <object-name>door.004</object-name>
- <object-name>door.005</object-name>
- <object-name>door.006</object-name>
- <property-base>sim/model/livery</property-base>
- <texture-prop>texture</texture-prop>
- <texture>L1011-DAL.png</texture> 
-</animation> 
-
 <!-- COCKPIT -->
 
 <!--
@@ -1004,6 +978,32 @@
    <z>0</z>
   </axis>
  </animation>
+
+<nasal> 
+ <load> var livery_update = aircraft.livery_update.new("Aircraft/L-1011-500/Models/Liveries"); </load> 
+ <unload> livery_update.stop(); </unload>
+ </nasal> 
+
+<animation>
+ <type>material</type>
+ <object-name>Loutbslat_l1011</object-name>
+ <object-name>fuselage_l1011</object-name>
+ <object-name>Fgearbox_l1011</object-name>
+ <object-name>Fgear_l1011</object-name>
+ <object-name>FlandgLbdo_l1011</object-name>
+ <object-name>FlandgLsdo_l1011</object-name>
+ <object-name>FlandgRsdo_l1011</object-name>
+ <object-name>eng2rev_l1011</object-name>
+ <object-name>door.001</object-name>
+ <object-name>door.002</object-name>
+ <object-name>door.003</object-name>
+ <object-name>door.004</object-name>
+ <object-name>door.005</object-name>
+ <object-name>door.006</object-name>
+ <property-base>sim/model/livery</property-base>
+ <texture-prop>texture</texture-prop>
+ <texture>L1011-PAA.png</texture> 
+</animation> 
 
 <!-- DOORS -->
 <!-- -->
