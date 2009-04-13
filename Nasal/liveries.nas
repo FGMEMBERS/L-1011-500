@@ -1,2 +1,2 @@
-aircraft.livery.init("Aircraft/L1011-500/Models/Liveries");
+aircraft.livery.init("Aircraft/L-1011-500/Models/Liveries");
 
