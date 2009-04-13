@@ -1,37 +1,49 @@
-# used to the animation of the canopy switch and the canopy move
-# toggle keystroke or 2 position switch
+# =====
+# Doors
+# =====
 
-var cnpy = aircraft.door.new("canopy", 10);
-var switch = props.globals.getNode("sim/model/L-1011-500/controls/canopy/canopy-switch", 1);
-var pos = props.globals.getNode("canopy/position-norm", 1);
+Doors = {};
 
-var canopy_switch = func(v) {
+Doors.new = func {
+   obj = { parents : [Doors],
+           door1 : aircraft.door.new("instrumentation/doors/door1", 10.0),
+           door2 : aircraft.door.new("instrumentation/doors/door2", 10.0),
+           door3 : aircraft.door.new("instrumentation/doors/door3", 10.0),
+           door4 : aircraft.door.new("instrumentation/doors/door4", 10.0),
+           door5 : aircraft.door.new("instrumentation/doors/door5", 10.0),
+           door6 : aircraft.door.new("instrumentation/doors/door6", 10.0)
+         };
+   return obj;
+};
 
-	var p = pos.getValue();
-
-	if (v == 2 ) {
-		if ( p < 1 ) {
-			v = 1;
-		} elsif ( p >= 1 ) {
-			v = -1;
-		}
-	}
-
-	if (v < 0) {
-		switch.setValue(1);
-		cnpy.close();
-
-	} elsif (v > 0) {
-		switch.setValue(3);
-		cnpy.open();
-
-	}
+Doors.door1export = func {
+   me.door1.toggle();
 }
 
-# fixes cockpit when use of ac_state.nas #####
-var cockpit_state = func {
-	var switch = getprop("sim/model/L-1011-500/controls/canopy/canopy-switch");
-	if ( switch == 1 ) {
-		setprop("canopy/position-norm", 0);
-	}
+Doors.door2export = func {
+   me.door2.toggle();
 }
+
+Doors.door3export = func {
+   me.door3.toggle();
+}
+
+Doors.door4export = func {
+   me.door4.toggle();
+}
+
+Doors.door5export = func {
+   me.door5.toggle();
+}
+
+Doors.door6export = func {
+   me.door6.toggle();
+}
+
+# ==============
+# Initialization
+# ==============
+
+# objects must be here, otherwise local to init()
+doorsystem = Doors.new();
+
