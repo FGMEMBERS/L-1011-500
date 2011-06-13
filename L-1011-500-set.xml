@@ -1,32 +1,41 @@
 <?xml version="1.0"?>
 <PropertyList>
 
- <sim>
-    <description>Lockheed L-1011-500 TriStar</description>
-    <author>Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
-    <flight-model>jsb</flight-model>
-    <aero>L-1011-500</aero>
-    <fuel-fraction>0.75</fuel-fraction>
-
-  <model>
-   <path>Aircraft/L-1011-500/Models/L-1011-500.xml</path>
-      <livery>
-        <file type="string"/>
-      </livery>	
-	<engines>
-		<left>
-			<damaged>0</damaged>
-		</left>
-		<right>
-			<damaged>0</damaged>
-		</right>
-	</engines>
-  </model>
-  <systems>
-      <autopilot>
+<sim>
+	<description>Lockheed L-1011-500 TriStar</description>
+	<author>Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
+	<status>beta</status>
+	<rating>
+		<FDM type="int">3</FDM>
+		<systems type="int">2</systems>
+		<cockpit type="int">0</cockpit>
+		<model type="int">4</model>
+	</rating>
+	
+	<flight-model>jsb</flight-model>
+	<aero>L-1011-500</aero>
+	<fuel-fraction>0.75</fuel-fraction>
+	
+	<model>
+		<path>Aircraft/L-1011-500/Models/L-1011-500.xml</path>
+		<livery>
+			<file type="string"/>
+		</livery>	
+		<engines>
+			<left>
+				<damaged>0</damaged>
+			</left>
+			<right>
+				<damaged>0</damaged>
+			</right>
+		</engines>
+	</model>
+	
+	<systems>
+		<autopilot>
             <path>Aircraft/L-1011-500/Systems/L-1011-500-autopilot.xml</path>
-      </autopilot>
-  </systems>
+		</autopilot>
+	</systems>
 
   <view>
    <internal archive="y">true</internal>
