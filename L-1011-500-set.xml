@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+
+<sim>
+	<description>Lockheed L-1011-500 TriStar</description>
+	<author>Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
+	<status>beta</status>
+	<rating>
+		<FDM type="int">3</FDM>
+		<systems type="int">2</systems>
+		<cockpit type="int">0</cockpit>
+		<model type="int">4</model>
+	</rating>
+	
+	<flight-model>jsb</flight-model>
+	<aero>L-1011-500</aero>
+	<fuel-fraction>0.75</fuel-fraction>
+	
+	<model>
+		<path>Aircraft/L-1011-500/Models/L-1011-500.xml</path>
+		<livery>
+			<file type="string"/>
+		</livery>	
+		<engines>
+			<left>
+				<damaged>0</damaged>
+			</left>
+			<right>
+				<damaged>0</damaged>
+			</right>
+		</engines>
+	</model>
+	
+	<systems>
+		<autopilot>
+            <path>Aircraft/L-1011-500/Systems/L-1011-500-autopilot.xml</path>
+		</autopilot>
+	</systems>
+
+  <view>
+   <internal archive="y">true</internal>
+    <config>
+     <x-offset-m archive="y">-0.6</x-offset-m>
+     <y-offset-m archive="y">2.15</y-offset-m>
+     <z-offset-m archive="y">-22.4</z-offset-m>
+     <pitch-offset-deg archive="y">-5.0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+    </config>
+  </view>
+
+    <view n="101">
+     <name>First Observer</name>
+     <type>lookfrom</type>
+     <internal type="bool">true</internal>
+     <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+      <x-offset-m type="double">-0.8</x-offset-m>
+      <y-offset-m archive="y">2.15</y-offset-m>
+      <z-offset-m type="double">-22.0</z-offset-m>
+      <pitch-offset-deg>-5</pitch-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+     </config>
+     <dynamic>
+      <enabled type="bool">false</enabled>
+     </dynamic>
+    </view>
+
+    <view n="102">
+     <name>Second Observer</name>
+     <type>lookfrom</type>
+     <internal type="bool">true</internal>
+     <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+      <x-offset-m type="double">-0.3</x-offset-m>
+      <y-offset-m archive="y">2.15</y-offset-m>
+      <z-offset-m type="double">-21.30</z-offset-m>
+      <pitch-offset-deg>-5</pitch-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+     </config>
+     <dynamic>
+      <enabled type="bool">false</enabled>
+     </dynamic>
+    </view>
+
+    <view n="103">
+     <name>Flight Enginer</name>
+     <type>lookfrom</type>
+     <internal type="bool">true</internal>
+     <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+      <x-offset-m type="double">0.3</x-offset-m>
+      <y-offset-m archive="y">2.15</y-offset-m>
+      <z-offset-m type="double">-21.20</z-offset-m>
+      <pitch-offset-deg>-5</pitch-offset-deg>
+      <heading-offset-deg>270</heading-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+     </config>
+     <dynamic>
+      <enabled type="bool">false</enabled>
+     </dynamic>
+    </view>
+
+    <view n="104">
+     <name>Co-pilot</name>
+     <type>lookfrom</type>
+     <internal type="bool">true</internal>
+     <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+     <x-offset-m archive="y">0.6</x-offset-m>
+     <y-offset-m archive="y">2.15</y-offset-m>
+     <z-offset-m archive="y">-22.4</z-offset-m>
+      <pitch-offset-deg>-5</pitch-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+     </config>
+     <dynamic>
+      <enabled type="bool">false</enabled>
+     </dynamic>
+    </view>
+
+ <chase-distance-m type="double" archive="y">-70.0</chase-distance-m>
+
+  <help>
+   <title>Lockheed L-1011-500 Tristar</title>
+   <key>
+    <name>Ctrl-b</name>
+    <desc>Toggle speedbrakes</desc>
+   </key>
+
+   <key>
+    <name>Delete</name>
+    <desc>Toggle thrust reversers</desc>
+   </key>
+  </help>
+
+    <flaps>   
+     <setting>0.000</setting> 
+     <setting>0.121</setting> 
+     <setting>0.303</setting>   
+     <setting>0.424</setting>   
+     <setting>0.545</setting> 
+     <setting>0.667</setting>   
+     <setting>1.000</setting> 
+    </flaps>
+
+<menubar>
+ <default>
+  <menu n="10">
+   <label>Lockheed L-1011-500</label>
+   <enabled type="bool">true</enabled>
+   <item>
+    <label>Select Livery</label>
+    <binding>
+     <command>nasal</command>
+     <script>aircraft.livery.dialog.toggle()</script>
+    </binding>
+   </item>
+
+       <item>
+       <label>Doors</label>
+       <binding>
+        <command>nasal</command>
+         <script>
+	    var mal = gui.Dialog.new("/sim/gui/dialogs/L-1011-500/menu/dialog", 
+          "Aircraft/L-1011-500/Dialogs/doors-dialog.xml");
+          mal.open();
+         </script>
+        </binding>
+       </item>
+
+  </menu>
+ </default>
+</menubar>
+
+ </sim>
+
+<input>
+ <keyboard>
+      <key n="67">
+        <name>C</name>
+        <desc>Open/close doors</desc>
+        <binding>
+          <command>nasal</command>
+          <script>L1011.canopy_switch(2)</script>
+        </binding>
+      </key>
+
+  <key n="127">
+   <name>Delete</name>
+   <desc>Toggle Reversers</desc>
+   <binding> <command>nasal</command>
+    <script>reversethrust.togglereverser()</script>
+   </binding>
+  </key> 
+ </keyboard>
+</input> 
+
+<engines>
+	<engine n="0">
+		<running>true</running>
+		<rpm>1000</rpm>
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>
+	<engine n="1">
+		<running>true</running>
+		<rpm>1000</rpm>
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>
+	<engine n="2">
+		<running>true</running>
+		<rpm>1000</rpm>         
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>  
+</engines>
+
+<controls>
+ <gear>
+  <brake-parking>1</brake-parking>
+ </gear>
+ <lighting>
+  <strobe>1</strobe>
+  <beacon>1</beacon>
+  <landing-lights>1</landing-lights>
+  <nav-lights>1</nav-lights>
+ </lighting>
+</controls>
+
+   <limits>
+    <max-flap-extension-speed>
+     <flaps>0.121</flaps>
+     <speed>250</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+     <flaps>0.303</flaps>
+     <speed>230</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+     <flaps>0.424</flaps>
+     <speed>225</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+     <flaps>0.545</flaps>
+     <speed>220</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+     <flaps>0.667</flaps>
+     <speed>215</speed>
+    </max-flap-extension-speed>
+    <max-flap-extension-speed>
+     <flaps>1.000</flaps>
+     <speed>210</speed>
+    </max-flap-extension-speed>
+    <max-gear-extension-speed>300</max-gear-extension-speed>
+    <vne>595</vne>
+   </limits>
+
+<nasal>
+ <reversethrust> 
+  <file>Aircraft/L-1011-500/Nasal/reverse-thrust.nas</file>
+ </reversethrust> 
+ <L1011> 
+  <file>Aircraft/L-1011-500/Nasal/damage.nas</file>
+  <file>Aircraft/L-1011-500/Nasal/doors.nas</file>
+  <file>Aircraft/L-1011-500/Nasal/lighting.nas</file>
+  <file>Aircraft/L-1011-500/Nasal/liveries.nas</file>
+  <file>Aircraft/Generic/limits.nas</file>
+ </L1011> 
+</nasal> 
+
+</PropertyList>
+
