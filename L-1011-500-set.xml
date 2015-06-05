@@ -141,7 +141,27 @@
 
  <menubar include="Dialogs/L-1011-menu.xml"/> 
 
+		<systems>
+			<autopilot>
+				<path>Aircraft/L-1011-500/Systems/SYS8_0_autopilot.xml</path>
+			</autopilot>
+		</systems>
+
  </sim>
+
+	<autopilot>
+
+		<settings>
+			<kts-mach-select type="string">kts</kts-mach-select>
+			<max-pitch type="float">4.0</max-pitch>
+			<bank-angle-limit-deg type="int">35</bank-angle-limit-deg>
+		</settings>
+
+		<internal>
+			<max-pitch type="float">4.0</max-pitch>
+		</internal>
+
+	</autopilot>
 
  <engines>
   <engine n="0">
