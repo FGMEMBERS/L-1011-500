@@ -5,7 +5,7 @@
   <model>
    <livery>
     <name type="string">Pan American World Airways</name>
-    <texture>L1011-PAA.png</texture>
+    <texture>L-1011-PAA.png</texture>
    </livery>
   </model>
  </sim>

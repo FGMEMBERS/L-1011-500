@@ -1,45 +1,31 @@
 <?xml version="1.0"?>
 <PropertyList>
- <sim>
 
-  <description>Lockheed-1011-500 tristar</description>
-  <author>Gjis and other FG authors</author>
-  <status>alpha</status>
+<sim>
+	<description>Lockheed L-1011-500 TriStar</description>
+	<author>Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
+	<status>beta</status>
 
-  <flight-model>jsb</flight-model>
-  <aero>L-1011-500</aero>
-
-  <startup>
-   <splash-texture>Aircraft/L-1011-500/splash.jpg</splash-texture>
-  </startup>
-
-  <sound>
-   <audible>true</audible>
-   <path>Aircraft/L-1011-500/Sounds/L-1011-500-sound.xml</path>
-  </sound>
-  
-  <model>
-   <path>Aircraft/L-1011-500/Models/L-1011-500.xml</path>
-  </model>
-   
+	<flight-model>jsb</flight-model>
+	<aero>L-1011-500</aero>
+	<fuel-fraction>0.75</fuel-fraction>
+	
+	<model>
+		<path>Aircraft/L-1011-500/Models/L-1011-500.xml</path>
+	</model>
+	
   <view>
    <internal archive="y">true</internal>
-   <config>
-     <!-- x/y/z == right/up/back -->
-     <x-offset-m archive="y">-0.418</x-offset-m>
-     <y-offset-m archive="y">0.998</y-offset-m>
-     <z-offset-m archive="y">-12.983</z-offset-m>
-     <pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
-   </config>
+    <config>
+     <x-offset-m archive="y">-0.6</x-offset-m>
+     <y-offset-m archive="y">2.15</y-offset-m>
+     <z-offset-m archive="y">-22.4</z-offset-m>
+     <pitch-offset-deg archive="y">-5.0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+    </config>
   </view>
 
-    <view n="1">
-   <config>
-     <z-offset-m type="double"  archive="y">-50.0</z-offset-m>
-   </config>
-  </view> 
-
-      <view n="101">
+    <view n="101">
      <name>First Observer</name>
      <type>lookfrom</type>
      <internal type="bool">true</internal>
@@ -116,9 +102,9 @@
      </dynamic>
     </view>
 
-  <chase-distance-m>-45</chase-distance-m>
+ <chase-distance-m type="double" archive="y">-70.0</chase-distance-m>
 
-   <help>
+  <help>
    <title>Lockheed L-1011-500 Tristar</title>
    <key>
     <name>Ctrl-b</name>
@@ -131,99 +117,98 @@
    </key>
   </help>
 
- <flaps>
-   <setting>0.000</setting> 
-   <setting>0.250</setting> 
-   <setting>0.500</setting>  
-   <setting>0.750</setting>  
-   <setting>1.000</setting> 
-  </flaps>
+    <flaps>   
+     <setting>0.000</setting> 
+     <setting>0.121</setting> 
+     <setting>0.303</setting>   
+     <setting>0.424</setting>   
+     <setting>0.545</setting> 
+     <setting>0.667</setting>   
+     <setting>1.000</setting> 
+    </flaps>
 
- <menubar include="Dialogs/L-1011-menu.xml"/> 
+<!-- <menubar>
+ <default>
+  <menu n="10">
+   <label>Lockheed L-1011-500</label>
+   <enabled type="bool">true</enabled>
+   <item>
+    <label>Select Livery</label>
+    <binding>
+     <command>nasal</command>
+     <script>aircraft.livery.dialog.toggle()</script>
+    </binding>
+   </item>
+
+       <item>
+       <label>Doors</label>
+       <binding>
+        <command>nasal</command>
+         <script>
+	    var mal = gui.Dialog.new("/sim/gui/dialogs/L-1011-500/menu/dialog", 
+          "Aircraft/L-1011-500/Dialogs/doors-dialog.xml");
+          mal.open();
+         </script>
+        </binding>
+       </item>
+  </menu>
+ </default>
+</menubar> -->
+
+ <!-- <menubar include="Dialogs/L-1011-menu.xml"/> -->
 
  </sim>
 
- <engines>
-  <engine n="0">
-   <reverser-position type="double">0.000000</reverser-position>
-    <running>true</running>
-  </engine>
-  <engine n="1">
-   <reverser-position type="double">0.000000</reverser-position>
-    <running>true</running>
-  </engine>
-  <engine n="2">
-   <reverser-position type="double">0.000000</reverser-position>
-    <running>true</running>
-  </engine>
- </engines>
-
 <input>
  <keyboard>
+      <key n="67">
+        <name>C</name>
+        <desc>Open/close doors</desc>
+        <binding>
+          <command>nasal</command>
+          <script>L1011.canopy_switch(2)</script>
+        </binding>
+      </key>
+
   <key n="127">
    <name>Delete</name>
    <desc>Toggle Reversers</desc>
-   <binding>
-    <command>nasal</command>
+   <binding> <command>nasal</command>
     <script>reversethrust.togglereverser()</script>
    </binding>
-  </key>
+  </key> 
  </keyboard>
-</input>
+</input> 
 
-<nasal>
-		<livery>
-			<file>Aircraft/L-1011-500/Nasal/liveries.nas</file>
-		</livery>
-		<reversethrust>
-			<file>Aircraft/L-1011-500/Nasal/reverse-thrust.nas</file>
-		</reversethrust>
-		<lights>
-			<file>Aircraft/L-1011-500/Nasal/lights.nas</file>
-		</lights>
-		<tyresmoke>
-			<file>Aircraft/L-1011-500/Nasal/tyresmoke.nas</file>
-		</tyresmoke>
-	</nasal>
+<engines>
+	<engine n="0">
+		<running>true</running>
+		<rpm>1000</rpm>
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>
+	<engine n="1">
+		<running>true</running>
+		<rpm>1000</rpm>
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>
+	<engine n="2">
+		<running>true</running>
+		<rpm>1000</rpm>         
+		<reverser-position type="double">0.000000</reverser-position>
+	</engine>  
+</engines>
 
-
-<!--
- <autopilot>
-  <locks>
-   <heading    type="string">off</heading>
-   <altitude   type="string">off</altitude>
-   <speed      type="string">off</speed>
-   <vert-speed type="string">off</vert-speed>
-  </locks>
-  <settings>
-   <target-altitude-ft type="double">10000.0</target-altitude-ft>
-   <target-speed-kt type="double">150.0</target-speed-kt>
-   <target-n1 type="double">93.0</target-n1>
-  </settings>
- </autopilot>
--->
-
-<payload>
-	<weight>
-		<name type="string">Crew</name>
-		<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-		<min-lb type="double">315.0</min-lb>
-		<max-lb type="double">700.0</max-lb>
-	</weight>
-	
-	<weight>
-		<name type="string">Cargo_1</name>
-		<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-		<min-lb type="double">700.0</min-lb>
-		<max-lb type="double">8420.0</max-lb>
-	</weight>
-	
-	<weight>
-		<name type="string">Cargo_2</name>
-		<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
-		<min-lb type="double">900.0</min-lb>
-		<max-lb type="double">10600.0</max-lb>
-	</weight>
-   </payload>
+<controls>
+ <gear>
+  <brake-parking>1</brake-parking>
+ </gear>
+ <lighting>
+  <strobe>1</strobe>
+  <beacon>1</beacon>
+  <landing-lights>1</landing-lights>
+  <nav-lights>1</nav-lights>
+ </lighting>
+</controls>
 
 </PropertyList>
+

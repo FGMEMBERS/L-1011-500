@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Lockheed-1011</label>
+      <enabled type="bool">true</enabled>
+
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+
+     <item>
+       <label>Doors</label>
+       <binding>
+        <command>nasal</command>
+         <script>
+	    var mal = gui.Dialog.new("/sim/gui/dialogs/L-1011-500/menu/dialog", 
+          "Aircraft/L-1011-500/Dialogs/doors-dialog.xml");
+          mal.open();
+         </script>
+        </binding>
+       </item>
+
+    </menu>
+  </default>
+
+</PropertyList>
+

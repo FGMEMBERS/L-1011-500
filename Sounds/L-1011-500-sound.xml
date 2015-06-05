@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <fx>
+  <!-- som reversor -->
+
+  <!-- som reversor -->
+
+  <!-- som do motor desligando -->
+  <engine>
+   <name>Left engine 1 off</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_shutdown.wav</path>
+   <mode>once</mode>
+   <condition>
+    <and>
+     <property>controls/engines/engine[0]/cutoff</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Evolume</property>
+   </volume>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>50.0</max-dist>
+  </engine>
+
+  <engine>
+   <name>Right engine 2 off</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_shutdown.wav</path>
+   <mode>once</mode>
+   <condition>
+    <and>
+     <property>controls/engines/engine[1]/cutoff</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Evolume</property>
+   </volume>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>50.0</max-dist>
+  </engine>
+
+  <!-- som do motor desligando-->
+
+  <!-- som do motor ligando fora-->
+  <engine>
+   <name>Left engine 1 on</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_xstarter.wav</path>
+   <mode>once</mode>
+   <condition>
+    <and>
+     <property>controls/engines/engine[0]/starter</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Evolume</property>
+   </volume>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>50.0</max-dist>
+  </engine>
+
+  <engine>
+   <name>Right engine 2 on</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_xstarter.wav</path>
+   <mode>once</mode>
+   <condition>
+    <and>
+     <property>controls/engines/engine[1]/starter</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Evolume</property>
+   </volume>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>50.0</max-dist>
+  </engine>
+
+
+  <!-- som do motor ligando  fora-->
+
+  <!-- som do motor ligando dentro -->
+  <engine>
+   <name>Left engine 1 sound starter inside</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_idle.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+    <less-than>
+     <property>engines/engine[0]/n1</property>
+     <value>30</value>
+    </less-than>
+    <and>
+     <property>controls/engines/engine[0]/starter</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Pvolume</property>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/n1</property>
+    <offset>0.10</offset>
+    <factor>0.01</factor>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>Right engine 2 sound starter inside</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_idle.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
+    <less-than>
+     <property>engines/engine[1]/n1</property>
+     <value>30</value>
+    </less-than>
+    <and>
+     <property>controls/engines/engine[1]/starter</property>
+    </and>
+   </condition>
+   <volume>
+    <property>sim/sound/Pvolume</property>
+   </volume>
+   <pitch>
+    <property>/engines/engine[1]/n1</property>
+    <offset>0.10</offset>
+    <factor>0.01</factor>
+   </pitch>
+  </engine>
+
+  <!-- som do motor ligando dentro -->
+
+  <!-- som do reverso interno -->
+  <engine>
+   <name>Left engine 1 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[0]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>Right engine 2 reverse inside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine/reverser-pos-norm</property>
+    </or>
+    <and>
+     <property>engines/engine[1]/running</property>
+    </and>
+   </condition>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb</property>
+    <type>ln</type>
+    <factor>0.0050</factor>
+    <offset>0.05</offset>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+  </engine>
+  <!-- som do reverso interno -->
+
+  <!-- som do reverso fora da aeronave -->
+  <engine>
+   <name>Left engine 1 reverser outside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <condition>
+    <greater-than>
+     <property>/engines/engine/reverser-pos-norm</property>
+     <value>0</value>
+    </greater-than>
+    <greater-than>
+     <property>/sim/current-view/view-number</property>
+     <value>0</value>
+    </greater-than>
+    <and>
+     <property>engines/engine[0]/running</property>
+    </and>
+   </condition>
+   <mode>looped</mode>
+   <volume>
+    <property>/engines/engine/reverser-pos-norm</property>
+    <factor>1.0</factor>
+   </volume>
+   <volume>
+    <property>sim/sound/Ovolume</property>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>100.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engine>
+
+  <engine>
+   <name>Right engine 2 reverser outside</name>
+   <path>Sounds/exhaust_loop.wav</path>
+   <condition>
+    <greater-than>
+     <property>/engines/engine/reverser-pos-norm</property>
+     <value>0</value>
+    </greater-than>
+    <greater-than>
+     <property>/sim/current-view/view-number</property>
+     <value>0</value>
+    </greater-than>
+    <and>
+     <property>engines/engine[1]/running</property>
+    </and>
+   </condition>
+   <mode>looped</mode>
+   <volume>
+    <property>/engines/engine/reverser-pos-norm</property>
+    <factor>1.0</factor>
+   </volume>
+   <volume>
+    <property>sim/sound/Ovolume</property>
+   </volume>
+   <pitch>
+    <offset>1.6</offset>
+   </pitch>
+   <position>
+    <x>3.69645</x>
+    <y>4.77041</y>
+    <z>-1.30186</z>
+   </position>
+   <reference-dist>100.0</reference-dist>
+   <max-dist>500.0</max-dist>
+  </engine>
+  <!-- som do reverso fora da aeronave -->
+
+  <!-- som do motor acima de 100% -->
+  <engine>
+   <name>engine</name>
+   <!-- Antigo jet.wav-->
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_fullwhine.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <or>
+      <property>/engines/engine[0]/running</property>
+      <property>/engines/engine[1]/running</property>
+      <value>1</value>
+     </or>
+     <greater-than>
+      <property>/engines/engine/n1</property>
+      <value>100.5</value>
+     </greater-than>
+    </and>
+
+   </condition>
+  </engine>
+  <!-- som do motor acima de 100% -->
+  <engine>
+   <name>engine</name>
+   <!-- Antigo jet.wav-->
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_spool.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine[0]/running</property>
+     <property>/engines/engine[1]/running</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[2]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[3]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.05</offset>
+   </volume>
+  </engine>
+  <!-- som do motor - aceleração-->
+
+  <!-- som do motor - base -->
+  <engine>
+   <name>whine</name>
+   <path>Aircraft/L-1011-500/Sounds/PW_JT3D-7_spoolhigh.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <or>
+     <property>/engines/engine[0]/running</property>
+     <property>/engines/engine[1]/running</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.1</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>ln</type>
+    <factor>0.10</factor>
+    <offset>0.1</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+   <pitch>
+    <property>/engines/engine[1]/thrust_lb[0]</property>
+    <type>log</type>
+    <factor>0.20</factor>
+    <offset>0.10</offset>
+   </pitch>
+  </engine>
+  <!-- som do motor - base -->
+
+  <rumble>
+   <name>rumble</name>
+   <mode>looped</mode>
+   <path>Sounds/rumble.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <type>log</type>
+    <factor>0.5</factor>
+   </volume>
+  </rumble>
+
+  <gear>
+   <name>gear</name>
+   <mode>in-transit</mode>
+   <path>Sounds/gear.wav</path>
+   <property>/gear/gear[0]/position-norm</property>
+   <pitch>
+    <internal>dt_play</internal>
+    <offset>1.0</offset>
+    <factor>-0.001</factor>
+   </pitch>
+  </gear>
+
+  <gear>
+   <name>gear-lock</name>
+   <path>Sounds/gear-lck.wav</path>
+   <condition>
+    <equals>
+     <property>/gear/gear[0]/position-norm</property>
+     <value>0</value>
+    </equals>
+   </condition>
+  </gear>
+
+  <gear>
+   <name>gear-horn</name>
+   <mode>looped</mode>
+   <path>Sounds/gear-hrn.wav</path>
+   <condition>
+    <and>
+     <less-than>
+      <property>/controls/engines/engine/throttle</property>
+      <value>0.17</value>
+     </less-than>
+     <less-than>
+      <property>/velocities/groundspeed-kt</property>
+      <value>190</value>
+     </less-than>
+     <equals>
+      <property>/controls/gear/gear-down</property>
+      <value>0</value>
+     </equals>
+    </and>
+   </condition>
+  </gear>
+
+  <!-- toque das rodas no chão -->
+  <squeal>
+   <name>squeal</name>
+   <path>Aircraft/L-1011-500/Sounds/touchdown.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+  <!-- toque das rodas no chão -->
+
+
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/L-1011-500/Sounds/Flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+  </flap>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind.wav</path>
+   <property>/velocities/airspeed-kt</property>
+   <volume>
+    <property>/position/altitude-ft</property>
+    <factor>-0.000015</factor>
+    <offset>1.0</offset>
+    <min>0.1</min>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0015</factor>
+    <min>0.03</min>
+    <max>0.25</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+
+  <stall>
+   <name>stall</name>
+   <path>Aircraft/L-1011-500/Sounds/bastall.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <min>30.0</min>
+   </volume>
+  </stall>
+
+  <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <path>Aircraft/L-1011-500/Sounds/bastall.wav</path>
+   <condition>
+    <less-than>
+     <property>velocities/airspeed-kt</property>
+     <value>140</value>
+    </less-than>
+    <not>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+     <property>/surface-positions/flap-pos-norm</property>
+     <property>/gear/gear[0]/position-norm</property>
+    </not>
+   </condition>
+   <volume>
+    <max>0.5</max>
+   </volume>
+   <position>
+    <x>-1.5</x>
+    <y>1.59</y>
+    <z>-7.25</z>
+   </position>
+   <reference-dist>1.0</reference-dist>
+   <max-dist>2.0</max-dist>
+  </stall>
+
+  <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <path>Aircraft/L-1011-500/Sounds/bastall.wav</path>
+   <condition>
+    <less-than>
+     <property>velocities/airspeed-kt</property>
+     <value>110</value>
+    </less-than>
+    <not>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+     <property>/gear/gear[0]/position-norm</property>
+    </not>
+   </condition>
+   <volume>
+    <max>0.5</max>
+   </volume>
+   <position>
+    <x>-1.5</x>
+    <y>1.59</y>
+    <z>-7.25</z>
+   </position>
+   <reference-dist>1.0</reference-dist>
+   <max-dist>2.0</max-dist>
+  </stall>
+
+
+  <switch>
+   <name>click on</name>
+   <mode>once</mode>
+   <path>Aircraft/L-1011-500/Sounds/click.wav</path>
+   <condition>
+    <property>/sim/sound/switch</property>
+   </condition>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+  </switch>
+
+  <switch>
+   <name>click off</name>
+   <mode>once</mode>
+   <path>Aircraft/L-1011-500/Sounds/click.wav</path>
+   <condition>
+    <not>
+     <property>/sim/sound/switch</property>
+    </not>
+   </condition>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+  </switch>
+
+  <!-- switch>
+   <name>click on</name>
+   <mode>once</mode>
+   <path>Aircraft/DC-9-20/Sounds/FastenSeatbelt.wav</path>
+   <condition>
+    <property>controls/switches/seatbelt-sign</property>
+   </condition>
+   <volume>
+    <factor>1</factor>
+   </volume>
+  </switch -->
+
+  <!-- rain>
+   <name>rain</name>
+   <mode>looped</mode>
+   <path>Aircraft/L-1011-500/Sounds/rain.wav</path>
+   <condition>
+    <and>
+     <equals>
+      <property>environment/rain/above_clouds</property>
+      <value>0</value>
+     </equals>
+     <or>
+      <greater-than>
+       <property>environment/metar/rain-norm</property>
+       <value>0.2</value>
+      </greater-than>
+      <greater-than>
+       <property>environment/metar/snow-norm</property>
+       <value>0.2</value>
+      </greater-than>
+     </or>
+    </and>
+   </condition>
+   <volume>
+    <property>/environment/metar/rain-norm</property>
+    <factor>1.00</factor>
+    <offset>0.00</offset>
+    <min>0.4</min>
+    <max>0.9</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.001</factor>
+    <offset>1.0</offset>
+   </pitch>
+  </rain -->
+
+  <!-- no binding yet?
+  <click>
+   <name>click</name>
+   <path>Sounds/click.wav</path>
+  </click>
+-->
+
+ </fx>
+
+</PropertyList>

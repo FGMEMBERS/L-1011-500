@@ -3,6 +3,52 @@
 
    <path>L-1011-500.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/L1011-500/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+    </load>
+
+    <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload>
+  </nasal>
+
+   <animation>
+    <type>material</type>
+    <object-name>Loubslat_l1011_1</object-name>
+    <object-name>door.001</object-name>
+    <object-name>door.002</object-name>
+    <object-name>door.003</object-name>
+    <object-name>door.005</object-name>
+    <object-name>Fgearbox_l1011</object-name>
+    <object-name>FlandgLbdo_l1011</object-name>
+    <object-name>FlandgLsdo_l1011</object-name>
+    <object-name>FlandgRbdo_l1011</object-name>
+    <object-name>FlandgRsdo_l1011</object-name>
+    <object-name>MLandGLdoo_l1011</object-name>
+    <object-name>MLandGLhol_l1011</object-name>
+    <object-name>MLandGLhol_l1011.001</object-name>
+    <object-name>door.004</object-name>
+    <object-name>door.006</object-name>
+    <object-name>fuselage_l1011</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>L-1011-Orbital.png</texture>
+	</animation>
+
 <!-- COCKPIT -->
 
 <!--
@@ -1299,33 +1345,5 @@
    <z>0</z>
   </axis>
  </animation>
-
-<!-- engines -->
-
-<animation>
- <type>select</type>
- <object-name>Lreverser_l1011</object-name>  
- <object-name>Lfan_l1011</object-name> 
- <object-name>MLandGLhol_l1011</object-name> 
- <condition>
-  <equals>
-   <property>/sim/model/engines/left/damaged</property> 
-   <value>0</value>
-  </equals>
- </condition>
-</animation>
-
-<animation>
- <type>select</type>
- <object-name>Rreverser_l1011</object-name>  
- <object-name>Lsdoor_l1011</object-name> 
- <object-name>Rengine_l1011</object-name> 
- <condition>
-  <equals>
-   <property>/sim/model/engines/right/damaged</property> 
-   <value>0</value>
-  </equals>
- </condition>
-</animation>
 
 </PropertyList>

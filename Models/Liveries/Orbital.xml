@@ -4,8 +4,8 @@
  <sim>
   <model>
    <livery>
-    <name type="string">Stargazer</name>
-    <texture>Liveries/Orbital.png</texture>
+    <name type="string">Orbital Aerospace</name>
+    <texture>L-1011-Orbital.png</texture>
    </livery>
   </model>
  </sim>
