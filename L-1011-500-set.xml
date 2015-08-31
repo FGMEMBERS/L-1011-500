@@ -2,12 +2,18 @@
 <PropertyList>
  <sim>
 
-  <description>Lockheed-1011-500 tristar</description>
-  <author>Gjis and other FG authors</author>
-  <status>alpha</status>
+   <description>Lockheed-1011-500 tristar</description>
+   <author>Lester Boffo (Stargazer), Peter Brendt - JWocky (FDM), Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
+   <status>beta</status>
+   <rating>
+     <FDM type="int">2</FDM>
+     <systems type="int">2</systems>
+     <cockpit type="int">0</cockpit>
+     <model type="int">3</model>
+   </rating>
 
-  <flight-model>jsb</flight-model>
-  <aero>L-1011-500</aero>
+   <flight-model>jsb</flight-model>
+   <aero>L-1011-500</aero>
 
   <startup>
    <splash-texture>Aircraft/L-1011-500/splash.jpg</splash-texture>
