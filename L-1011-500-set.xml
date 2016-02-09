@@ -2,8 +2,8 @@
 <PropertyList>
  <sim>
 
-   <description>Lockheed-1011-500 tristar</description>
-   <author>Lester Boffo (Stargazer), Peter Brendt - JWocky (FDM), Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM)</author>
+   <description>Lockheed-1011-500 Tristar</description>
+   <author>Lester Boffo (Stargazer), Peter Brendt - JWocky (FDM), Gijs de Rooy, Tiago Gusmão (3D), Jentron (FDM), Jonathan Redpath (General Fixes)</author>
    <status>beta</status>
    <rating>
      <FDM type="int">2</FDM>
@@ -32,9 +32,9 @@
    <internal archive="y">true</internal>
    <config>
      <!-- x/y/z == right/up/back -->
-     <x-offset-m archive="y">-0.418</x-offset-m>
-     <y-offset-m archive="y">0.998</y-offset-m>
-     <z-offset-m archive="y">-12.983</z-offset-m>
+     <x-offset-m archive="y">-0.42</x-offset-m>
+     <y-offset-m archive="y">-21.48</y-offset-m>
+     <z-offset-m archive="y">2.04</z-offset-m>
      <pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
    </config>
   </view>
